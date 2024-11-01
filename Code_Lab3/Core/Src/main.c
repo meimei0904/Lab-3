@@ -22,7 +22,10 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "input_processing.h"
+#include "led_display.h"
+#include "input_reading.h"
+#include "timer.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -94,8 +97,22 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  init_buffer();
+  LedTimeDurationInit();
+  //setTimer0(1);
+  setTimer1(1);
+  setTimer2(1);
+  setTimer3(1);
   while (1)
   {
+	  UpdateMode();
+	  	  if (timer2_flag == 1) {
+	  		  LEDScanning();
+	  		  setTimer2(1);
+	  	  }
+
+	  	  LedDispMode();
+	  	  UpdateDurationValue();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -199,7 +216,8 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOA, SEG0_Pin|SEG1_Pin|SEG2_Pin|SEG3_Pin
                           |SEG4_Pin|SEG5_Pin|SEG6_Pin|LED_RED_Pin
-                          |EN0_Pin|EN1_Pin|EN2_Pin|EN3_Pin, GPIO_PIN_RESET);
+                          |EN0_Pin|EN1_Pin|EN2_Pin|EN3_Pin
+                          |MODE_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, BUTTON_1_Pin|BUTTON_2_Pin|BUTTON_3_Pin|G1_Pin
@@ -208,10 +226,12 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pins : SEG0_Pin SEG1_Pin SEG2_Pin SEG3_Pin
                            SEG4_Pin SEG5_Pin SEG6_Pin LED_RED_Pin
-                           EN0_Pin EN1_Pin EN2_Pin EN3_Pin */
+                           EN0_Pin EN1_Pin EN2_Pin EN3_Pin
+                           MODE_Pin */
   GPIO_InitStruct.Pin = SEG0_Pin|SEG1_Pin|SEG2_Pin|SEG3_Pin
                           |SEG4_Pin|SEG5_Pin|SEG6_Pin|LED_RED_Pin
-                          |EN0_Pin|EN1_Pin|EN2_Pin|EN3_Pin;
+                          |EN0_Pin|EN1_Pin|EN2_Pin|EN3_Pin
+                          |MODE_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;

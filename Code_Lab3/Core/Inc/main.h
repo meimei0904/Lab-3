@@ -96,6 +96,8 @@ void Error_Handler(void);
 #define EN2_GPIO_Port GPIOA
 #define EN3_Pin GPIO_PIN_11
 #define EN3_GPIO_Port GPIOA
+#define MODE_Pin GPIO_PIN_12
+#define MODE_GPIO_Port GPIOA
 #define LED_GREEN_Pin GPIO_PIN_5
 #define LED_GREEN_GPIO_Port GPIOB
 #define LED_YELLOW_Pin GPIO_PIN_6
