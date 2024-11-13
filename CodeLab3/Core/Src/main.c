@@ -18,7 +18,6 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
-#include <button.h>
 #include "main.h"
 
 /* Private includes ----------------------------------------------------------*/
@@ -104,18 +103,13 @@ int main(void)
   setTimer3(1);
   while (1)
   {
-//	  UpdateMode();
-//	  UpdateDurationValue();
+	  LedDispMode();
 	  fsm_manual();
-//	  void manualOperation();
 	  if (get_timer2_flag())
 	  {
 		  LEDScanning();
 		  setTimer2(1);
 	  }
-
-	  LedDispMode();
-//	  UpdateDurationValue();
 
 	  if(get_timer3_flag())
 	  {

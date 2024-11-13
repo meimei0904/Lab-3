@@ -35,15 +35,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  15 .debug_ranges 00000978  00000000  00000000  0002b888  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  00016b01  00000000  00000000  0002c200  2**0
+ 16 .debug_macro  00016afd  00000000  00000000  0002c200  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   0000b6f3  00000000  00000000  00042d01  2**0
+ 17 .debug_line   0000b6f1  00000000  00000000  00042cfd  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    000825a8  00000000  00000000  0004e3f4  2**0
+ 18 .debug_str    000825a8  00000000  00000000  0004e3ee  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000053  00000000  00000000  000d099c  2**0
+ 19 .comment      00000053  00000000  00000000  000d0996  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00002984  00000000  00000000  000d09f0  2**2
+ 20 .debug_frame  00002984  00000000  00000000  000d09ec  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -2481,27 +2481,22 @@ int main(void)
  8001240:	f000 f9d2 	bl	80015e8 <setTimer3>
   while (1)
   {
-//	  UpdateMode();
-//	  UpdateDurationValue();
+	  LedDispMode();
+ 8001244:	f7ff ff34 	bl	80010b0 <LedDispMode>
 	  fsm_manual();
- 8001244:	f7ff f8de 	bl	8000404 <fsm_manual>
-//	  void manualOperation();
+ 8001248:	f7ff f8dc 	bl	8000404 <fsm_manual>
 	  if (get_timer2_flag())
- 8001248:	f000 fa42 	bl	80016d0 <get_timer2_flag>
- 800124c:	4603      	mov	r3, r0
- 800124e:	2b00      	cmp	r3, #0
- 8001250:	d004      	beq.n	800125c <main+0x4c>
+ 800124c:	f000 fa40 	bl	80016d0 <get_timer2_flag>
+ 8001250:	4603      	mov	r3, r0
+ 8001252:	2b00      	cmp	r3, #0
+ 8001254:	d004      	beq.n	8001260 <main+0x50>
 	  {
 		  LEDScanning();
- 8001252:	f7ff fe21 	bl	8000e98 <LEDScanning>
+ 8001256:	f7ff fe1f 	bl	8000e98 <LEDScanning>
 		  setTimer2(1);
- 8001256:	2001      	movs	r0, #1
- 8001258:	f000 f9b2 	bl	80015c0 <setTimer2>
+ 800125a:	2001      	movs	r0, #1
+ 800125c:	f000 f9b0 	bl	80015c0 <setTimer2>
 	  }
-
-	  LedDispMode();
- 800125c:	f7ff ff28 	bl	80010b0 <LedDispMode>
-//	  UpdateDurationValue();
 
 	  if(get_timer3_flag())
  8001260:	f000 fa40 	bl	80016e4 <get_timer3_flag>
@@ -2516,7 +2511,7 @@ int main(void)
 		  setTimer3(500);
  8001272:	f44f 70fa 	mov.w	r0, #500	; 0x1f4
  8001276:	f000 f9b7 	bl	80015e8 <setTimer3>
-	  fsm_manual();
+	  LedDispMode();
  800127a:	e7e3      	b.n	8001244 <main+0x34>
  800127c:	200000a0 	.word	0x200000a0
  8001280:	40010800 	.word	0x40010800
