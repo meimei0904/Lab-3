@@ -5,7 +5,7 @@
 #include "timer.h"
 #include "global.h"
 
-void LedDispMode();
+//void LedDispMode();
 void LEDScanning();
 void resetCountValue();
 

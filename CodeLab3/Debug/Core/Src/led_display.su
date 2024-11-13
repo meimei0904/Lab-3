@@ -3,5 +3,3 @@ led_display.c:20:13:display7SEG	16	static
 led_display.c:117:12:get7SEG1Value	4	static
 led_display.c:132:12:get7SEG2Value	4	static
 led_display.c:149:6:LEDScanning	8	static
-led_display.c:205:6:NormalMode	8	static
-led_display.c:293:6:LedDispMode	8	static

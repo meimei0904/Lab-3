@@ -25,7 +25,7 @@
 #include "timer.h"
 #include "led_display.h"
 #include "fsm_manual.h"
-//#include "fsm_automatic.h"
+#include "fsm_automatic.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -104,7 +104,7 @@ int main(void)
   setTimer3(1);
   while (1)
   {
-	  LedDispMode();
+	  fsm_automatic();
 	  fsm_manual();
 	  if (get_timer2_flag())
 	  {

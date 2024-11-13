@@ -14,5 +14,6 @@ int get_timer2_flag();
 void setTimer2(int duration);
 int get_timer3_flag();
 void setTimer3(int duration);
+void timer_run();
 
 #endif /* INC_TIMER_H_ */
