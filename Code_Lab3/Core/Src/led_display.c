@@ -337,7 +337,7 @@ void LEDScanning() {
 			break;
 	}
 }
-//-------------------------------------------global-------------
+//-------------------------------------------
 
 //int mode = 1;
 //int red_value, yellow_value, green_value;
