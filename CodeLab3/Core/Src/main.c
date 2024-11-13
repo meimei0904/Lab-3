@@ -25,6 +25,7 @@
 #include "timer.h"
 #include "led_display.h"
 #include "fsm_manual.h"
+//#include "fsm_automatic.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
