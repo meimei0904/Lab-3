@@ -18,14 +18,14 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
+#include <button.h>
 #include "main.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "timer.h"
 #include "led_display.h"
-#include "input_processing.h"
-#include "input_reading.h"
+#include "button.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -104,16 +104,18 @@ int main(void)
   setTimer3(1);
   while (1)
   {
+//	  UpdateMode();
+//	  UpdateDurationValue();
+	  fsm_manual();
+//	  void manualOperation();
+	  if (get_timer2_flag())
+	  {
+		  LEDScanning();
+		  setTimer2(1);
+	  }
 
-
-	  UpdateMode();
-	  	  if (get_timer2_flag()) {
-	  		  LEDScanning();
-	  		  setTimer2(1);
-	  	  }
-
-	  	  LedDispMode();
-	  	  UpdateDurationValue();
+	  LedDispMode();
+//	  UpdateDurationValue();
 
 	  if(get_timer3_flag())
 	  {

@@ -2,14 +2,15 @@
 #define __INPUT_PROCESSING_H_
 
 #include "main.h"
-//#include "input_reading.h"
+////#include "input_reading.h"
 #include "led_display.h"
 #include "timer.h"
 #include "global.h"
-
-void UpdateMode();
-void LedTimeDurationInit();
-void UpdateDurationValue();
+//
+//void UpdateMode();
+//void LedTimeDurationInit();
+//void UpdateDurationValue();
+void fsm_manual();
 
 //---------------------------input_reading (đọc nút nhấn và chống nhiễu)----------
 void init_buffer();

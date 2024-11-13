@@ -1,0 +1,7 @@
+button.c:28:6:fsm_manual	16	static
+button.c:283:6:init_buffer	16	static
+button.c:296:6:button_reading	16	static
+button.c:330:15:is_button_pressed	16	static
+button.c:335:15:is_button_pressed_1s	16	static
+button.c:340:15:is_button_held	16	static
+button.c:345:6:reset_flagForButtonHold	16	static
