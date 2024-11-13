@@ -2,3 +2,9 @@ input_processing.c:6:6:UpdateMode	8	static
 input_processing.c:28:13:increaseDraftValue	4	static
 input_processing.c:47:13:setDurationValue	16	static
 input_processing.c:73:6:UpdateDurationValue	8	static
+input_processing.c:140:6:init_buffer	16	static
+input_processing.c:153:6:button_reading	16	static
+input_processing.c:187:15:is_button_pressed	16	static
+input_processing.c:192:15:is_button_pressed_1s	16	static
+input_processing.c:197:15:is_button_held	16	static
+input_processing.c:202:6:reset_flagForButtonHold	16	static
